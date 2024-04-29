@@ -14,6 +14,8 @@ function init(){
     //wire up the functions to the click of the buttons
     addButton.addEventListener("click", add);
     subtractButton.addEventListener("click", subtract);
+    multiplyButton.addEventListener("click", multiply);
+    divideButton.addEventListener("click", divide);
 
 }
 

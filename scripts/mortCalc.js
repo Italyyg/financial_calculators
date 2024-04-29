@@ -25,12 +25,23 @@ function calculate() {
 
     //calculate monthly payment and total loan amount
     const monthlyPayment = principal * (monthlyRate * denominator) / (denominator - 1);
-    //let totalPayment = monthlyPayment * numOfPayments
-    //let totalIntrest = totalPayment - Number(principal.value)
-
-
-    //let result = principal * interest ( 1 + interest) **monthlyTerm / (1 + interest)**monthlyTerm - 1;
+    let totalPayment = monthlyPayment * numOfPayments;
+    let totalIntrest = totalPayment - principal;
 
     //put the results in the result field
-    document.querySelector("#estimate").value = monthlyPayment.toFixed(2);
+   //document.querySelector("#estimate").value = monthlyPayment.toFixed(2);
+const message = "Your expected month payment will be: $" + monthlyPayment.toFixed(2) + " with a total intrest amount of $" + totalIntrest.toFixed(2) + " paid in " + loanTerm + " years. Your total loan amount is $" + totalPayment.toFixed(2);
+
+document.querySelector("#total").innerHTML = message;s
+
+
 }
+//adding the reset button
+function resetForm() {
+    // Get the form element
+    let form = document.getElementById("myForm");
+    
+    // Reset the form
+    form.reset();
+  }
+
